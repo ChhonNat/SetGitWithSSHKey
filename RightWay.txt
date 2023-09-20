@@ -1,0 +1,27 @@
+1. Check SSH Key: Ensure that you have an SSH key set up and associated with your GitHub account.
+
+You can check if you have an SSH key by running the following command:
+
+cmd: ls -al ~/.ssh
+
+If you don't have an SSH key, you can generate one using the following command:
+
+cmd: ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+Note: Follow the prompts to create the key. Make sure to use the email associated with your GitHub account.
+
+
+2. Add SSH Key to SSH Agent: If you have an SSH key, add it to your SSH agent so that it can be used for authentication:
+
+cmd: ssh-add ~/.ssh/id_rsa
+
+Note: Replace ~/.ssh/id_rsa with the path to your SSH private key if it's located in a different location.
+
+3. Add SSH Key to GitHub Account: Copy the contents of your public key (~/.ssh/id_rsa.pub) to your GitHub account. You can do this by going to your GitHub account settings, then "SSH and GPG keys," and adding your public key.
+
+cmd: cat ~/.ssh/id_rsa.pub
+
+4. Use SSH URL: When cloning the repository, make sure to use the SSH URL (not the HTTPS URL) if you're using SSH keys for authentication:
+git clone from SSH in github.com.
+
+5. Verify Permissions: Ensure that your GitHub account has the necessary permissions to access the repository you're trying to clone. If it's a private repository, make sure you're added as a collaborator or have the required access.
