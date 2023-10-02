@@ -25,3 +25,40 @@ cmd: cat ~/.ssh/id_rsa.pub
 git clone from SSH in github.com.
 
 5. Verify Permissions: Ensure that your GitHub account has the necessary permissions to access the repository you're trying to clone. If it's a private repository, make sure you're added as a collaborator or have the required access.
+
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+<<<<<<<<<<<<<<<<<<<<< how to setup SSH Keygen for handle multi acconts >>>>>>>>>>>>>>>>>>>>>>>
+1 . Generate Separate SSH Key Pairs:
+
+ssh-keygen -t rsa -b 4096 -C "your-email@example.com" -f ~/.ssh/github_account1
+ssh-keygen -t rsa -b 4096 -C "your-email@example.com" -f ~/.ssh/github_account2
+
+2. Add SSH Keys to SSH Agent:
+
+ssh-add ~/.ssh/github_account1
+ssh-add ~/.ssh/github_account2
+
+then copy keygen global to pass in each github accounts .
+
+3. Configure SSH for Each GitHub Account:
+
+- create config file to configure SSH to use the appropriate key for each GitHub account by specifying a unique hostname for each account:
+
+# GitHub account 1
+Host github.com-account1
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/github_account1
+
+# GitHub account 2
+Host github.com-account2
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/github_account2
+
+4. Update Git Remote URLs:
+
+git remote set-url origin git@github.com-account1:username/repo.git
+...
