@@ -1,0 +1,10 @@
+1. cmd to create component:
+- cmd: php artisan make:component fileName
+- cmd: php artisan make:component FolderName/fieldName
+
+2. cmd to creat component with folder controll
+- cmd: php artisan make:component product.form --view
+after run this cmd it'll be create three folder as below:
+  . resources/views/components/product/form.blade.php
+  . app/view/form.php
+  .app/Http/Controllers/ProductController.php
