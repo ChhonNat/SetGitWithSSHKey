@@ -20,6 +20,7 @@ Note: Replace ~/.ssh/id_rsa with the path to your SSH private key if it's locate
 3. Add SSH Key to GitHub Account: Copy the contents of your public key (~/.ssh/id_rsa.pub) to your GitHub account. You can do this by going to your GitHub account settings, then "SSH and GPG keys," and adding your public key.
 
 cmd: cat ~/.ssh/id_rsa.pub
+cmd to copy on clipboard : clip < ~/.ssh/id_ed25519.pub
 
 4. Use SSH URL: When cloning the repository, make sure to use the SSH URL (not the HTTPS URL) if you're using SSH keys for authentication:
 git clone from SSH in github.com.
@@ -29,7 +30,7 @@ git clone from SSH in github.com.
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-<<<<<<<<<<<<<<<<<<<<< how to setup SSH Keygen for handle multi acconts >>>>>>>>>>>>>>>>>>>>>>>
+<<<<<<<<<<<<<<<<<<<<< how to setup SSH Keygen for handle multi acconnts >>>>>>>>>>>>>>>>>>>>>>>
 1 . Generate Separate SSH Key Pairs:
 
 ssh-keygen -t rsa -b 4096 -C "your-email@example.com" -f ~/.ssh/github_account1
