@@ -46,6 +46,7 @@ then copy keygen global to pass in each github accounts .
 3. Configure SSH for Each GitHub Account:
 
 - create config file to configure SSH to use the appropriate key for each GitHub account by specifying a unique hostname for each account:
+cmd: nano ~/.ssh/config
 
 # GitHub account 1
 Host github.com-account1
