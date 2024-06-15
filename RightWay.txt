@@ -41,6 +41,11 @@ ssh-keygen -t rsa -b 4096 -C "your-email@example.com" -f ~/.ssh/github_account2
 ssh-add ~/.ssh/github_account1
 ssh-add ~/.ssh/github_account2
 
+*** Note: if cannot add key ssh can use this command:
+cmd: eval $(ssh-agent -s)
+To Start the SSH Agent:
+Open Git Bash and start the SSH agent using the following command:
+
 then copy keygen global to pass in each github accounts .
 
 3. Configure SSH for Each GitHub Account:
